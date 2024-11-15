@@ -3,7 +3,7 @@
 //promps still figuring out
 const prompt = require('prompt-sync')({sigint: true});
 
-let name = prompt('input')
+let name = prompt('Press Enter to Start Game')
 
 //data for field setup
 const hat = '^';
@@ -59,6 +59,7 @@ myField[randRow][randCol] = hole;
   //finally place start point at index 0,0
   myField[0][0] = pathCharacter
 
+
   console.log(myField)
   //use .map and .join to create string use '\n' to break lines create grid 
   stringField = myField.map(row => row.join('')).join('\n');
@@ -66,4 +67,35 @@ myField[randRow][randCol] = hole;
 
 }
 //call function
-console.log(gameField(6,6,2))
+console.log(gameField(10,10,2))
+
+///movement
+const prompt2 = require('prompt-sync')({sigint: true});
+let movement = prompt('move with w,s,a,d' + '\n')
+
+//game conditions
+
+//set up field X
+//layer the field squares with base then object then goal then start posistion X
+//for loop generates by user input in function para, added easy or hard modeX
+//
+
+//input conditions (4 conditions) seems like if else statement
+//move up -> change array posisiton to northern array posistion if possible key w
+//move down -> key s
+//move right -> key d
+//move left -> key a
+// current posistion ++, on row or col to create the movement
+/* r/c -> 0,0 no move
+          1,0 -> right
+          -1,0 -> left
+          0,1 -> up
+          0,-1 -> down
+*/
+
+//seems like if else statement
+//object condition -> if array posisition contains hole -> user loses
+//field condtion -> if at border -> user cant move outside of field
+
+// argv or require method? dont understand how to catch input 
+//need how to undersatnd how to take input from node cmd line
